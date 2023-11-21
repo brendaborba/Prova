@@ -1,0 +1,20 @@
+<!-- Barra de ferramentas -->
+<mat-toolbar color="primary">
+  <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon> * </mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav [opened]="true" mode="side">
+    <mat-nav-list>
+      <a> 
+        <button mat-button routerLink="/pages/tarefa/tarefa-list">
+          Tarefas
+        </button>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet> </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

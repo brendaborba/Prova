@@ -1,0 +1,46 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Cadastrar</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <mat-form-field class="input" id="titulo">
+        <mat-label>Titulo</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="titulo"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="input" id="descricao">
+        <mat-label>Descrição</mat-label>
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="descricao"
+        />
+     
+      </mat-form-field>
+      <mat-form-field class="input" id="categoria">
+        <mat-label>Categorias</mat-label>
+        <mat-select [(ngModel)]="categoriaId">
+          <mat-option
+            *ngFor="let c of categorias"
+            [value]="c.categoriaId"
+          >
+            {{ c.nome }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary" (click)="voltar()">
+        Voltar
+      </button>
+      <button color="warn" mat-stroked-button (click)="cadastrar()">
+        Salvar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  
